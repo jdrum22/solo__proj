@@ -43,11 +43,16 @@ button {
 
 nav {
   width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .nav__row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 28px 20px;
   position: relative;
@@ -99,6 +104,60 @@ nav {
   box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
 }
 
+.nav__menu {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  display: none;
+ 
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f8f8f8;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms ease;
+}
+
+.open .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu__close {
+  position: absolute;
+  top: 44px;
+  right: 32px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu__link {
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+}
 .nav__link:hover {
   color: var(--primary);
 }
@@ -127,16 +186,19 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
+
   max-width: 500px;
   z-index: 3;
-  margin-top: 56px;
+  margin-top: 190px;
   position: absolute;
-  left: 100px;
+  align-items: center;
+  margin-left: 15%;
 }
 
-.header__text__subtitle {
+.header__text__subtitles {
   font-size: 20px;
   font-weight: 700;
+  margin-right: auto;
 }
 
 .header__text__title {
@@ -154,10 +216,11 @@ header {
 .header__car__wrapper {
   position: absolute;
   z-index: 2;
-  left: 700px;
-  top: 100px;
+  right: 0; 
+  top: 150px;
 
-  width: 55%;
+  width: 45%;
+  max-width: 100%;
   margin-top: 56px;
 }
 
@@ -169,6 +232,7 @@ header {
 .header__text__btns {
   display: flex;
   gap: 16px;
+  margin-right: auto;
 }
 
 .header__text__btn {
@@ -329,6 +393,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 5%;
 }
 
 .choose__text__subtitle {
@@ -437,13 +502,15 @@ header {
 
 .testimonials__list {
   display: flex;
-  
-  margin-top: 80px;
+
+  align-items: center;
+  justify-content: center;
   gap: 24px;
+  margin-top: 68px;
 }
 
 .testimonial {
-   background: white;
+  background: white;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.08);
   max-width: 540px;
   width: 100%;
@@ -452,8 +519,6 @@ header {
   padding: 56px;
   gap: 40px;
 }
-
-
 
 .testimonial__review {
   font-size: 22px;
@@ -470,7 +535,6 @@ header {
   width: 72px;
   height: 72px;
   border-radius: 9999px;
-  overflow: hidden;
 }
 
 .testimonial__info__img {
@@ -499,10 +563,6 @@ header {
   color: var(--primary);
 }
 
-
-
-
-
 /* Download */
 
 #download {
@@ -524,7 +584,7 @@ header {
 }
 
 .download__text__para {
-  color: var(--gray);
+  color: gray;
 }
 
 .download__text__links {
@@ -566,7 +626,7 @@ header {
 }
 
 .footer__intro__para {
-  color: var(--gray);
+  color: gray;
 }
 
 .footer__intro__links {
@@ -610,37 +670,54 @@ header {
   background-color: #ececec;
 }
 
-.footer__email__form__submit {
+.footer__email__footer__form__submit {
   height: 48px;
   font-size: 16px;
   font-weight: 700;
   border: none;
   outline: none;
   color: white;
-  background: var(--primary);
+  background: #ff4d30;
   border-radius: 4px;
   box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.35);
   transition: 300ms ease;
 }
 
-.footer__email__form__submit:hover {
+.footer__email__footer__form__submit:hover {
   background-color: #fa4226;
   box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
 }
 
-
 /* XL Screens */
 
-@media (max-width: 1280px) {
-  /* Footer */
-
-  .footer__row {
-    gap: 48px;
+@media (max-width: 1440px) {
+  /* Nav */
+  nav {
+    width: 90%;
   }
 
-  .footer__content {
-    width: 40%;
+  .nav__row {
+    padding-left: 20%;
+    gap: 20px;
   }
+
+  .nav__link {
+    font-size: 14px;
+  }
+
+  /* Header */
+  .header__car {
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Features */
+  #features {
+    padding-right: 5vw;
+  }
+
+  /* Download */
 }
 
 /* LG Screens */
@@ -652,9 +729,32 @@ header {
   .nav__btns {
     display: none;
   }
+  .nav__row {
+    justify-content: left;
+  }
+
+  .row {
+    padding-left: 4%;
+  }
 
   .nav__menu {
     display: block;
+  justify-content: end;
+  align-items: end;
+  margin-left: 110%;
+  }
+
+  /* Header */
+
+  .header__text {
+    margin-left: 5%;
+  }
+
+  .header__car {
+    width: 80%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 30%;
   }
 
   /* Features */
@@ -692,6 +792,12 @@ header {
     flex-direction: column;
     gap: 32px;
   }
+  /* footer */
+
+  .footer__content,
+  .footer__intro {
+    width: 45%;
+  }
 }
 
 /* Tablets - MD screens */
@@ -699,8 +805,9 @@ header {
 @media (max-width: 768px) {
   /* Header */
 
-  .header-bg,
-  .header__img__wrapper {
+  .header-car,
+  .header__car__wrapper,
+  .header__background {
     display: none;
   }
 
@@ -709,8 +816,19 @@ header {
   }
 
   .header__text {
-    align-items: center;
+    margin-left: 20%;
+  }
+
+  .header__text__title {
     text-align: center;
+  }
+
+  .header__text__subtitles {
+    margin-left: auto;
+  }
+
+  .header__text__btns {
+    margin-left: auto;
   }
 
   /* Features */
@@ -743,6 +861,14 @@ header {
 /* SM screens */
 
 @media (max-width: 640px) {
+  /* header */
+
+  .header__text {
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+  }
+
   /* Testimonials */
 
   .testimonial {
@@ -762,12 +888,19 @@ header {
   }
 }
 
+/* XS */
 @media (max-width: 480px) {
   /* Header */
 
   .header__text__btns {
     flex-direction: column;
     width: 100%;
+  }
+
+  .header__text {
+    margin-right: 10%;
+    max-width: 400px;
+    justify-content: center;
   }
 
   /* Features */
