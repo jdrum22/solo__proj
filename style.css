@@ -52,9 +52,9 @@ nav {
 
 .nav__row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  padding: 28px 20px;
+  padding: 28px 15px;
   position: relative;
   z-index: 99;
 }
@@ -110,7 +110,7 @@ nav {
   border: none;
   font-size: 24px;
   display: none;
- 
+  
 }
 
 .menu {
@@ -127,6 +127,7 @@ nav {
   opacity: 0;
   visibility: hidden;
   transition: 200ms ease;
+  
 }
 
 .open .menu {
@@ -189,10 +190,10 @@ header {
 
   max-width: 500px;
   z-index: 3;
-  margin-top: 190px;
+  margin-top: 270px;
   position: absolute;
   align-items: center;
-  margin-left: 15%;
+  margin-left: 14%;
 }
 
 .header__text__subtitles {
@@ -216,10 +217,10 @@ header {
 .header__car__wrapper {
   position: absolute;
   z-index: 2;
-  right: 0; 
-  top: 150px;
+  right: 10%;
+  top: 250px;
 
-  width: 45%;
+  width: 52%;
   max-width: 100%;
   margin-top: 56px;
 }
@@ -534,12 +535,13 @@ header {
 .testimonial__info__img__wrapper {
   width: 72px;
   height: 72px;
-  border-radius: 9999px;
+  
 }
 
 .testimonial__info__img {
   width: 100%;
   height: 100%;
+  border-radius: 9999px;
 }
 
 .testimonial__info__profile {
@@ -697,8 +699,9 @@ header {
   }
 
   .nav__row {
-    padding-left: 20%;
+    padding-left: 7%;
     gap: 20px;
+    justify-content: space-between;
   }
 
   .nav__link {
@@ -707,9 +710,22 @@ header {
 
   /* Header */
   .header__car {
-    width: 70%;
+    
+
     height: auto;
     max-width: 100%;
+  }
+
+  .header__car__wrapper {
+    width: 57%;
+    margin-top: 7%;
+    left: 39%;
+    
+  }
+
+  .header__text{
+    margin-left: 7%;
+    margin-top: 25%;
   }
 
   /* Features */
@@ -731,6 +747,7 @@ header {
   }
   .nav__row {
     justify-content: left;
+    padding: 40px 28px;
   }
 
   .row {
@@ -739,22 +756,28 @@ header {
 
   .nav__menu {
     display: block;
-  justify-content: end;
-  align-items: end;
-  margin-left: 110%;
+    justify-content: end;
+    align-items: end;
+    margin-left: 110%;
   }
 
   /* Header */
 
   .header__text {
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-top: 32%;
+  }
+
+  .header__car__wrapper{
+    width: 65%;
+    left: 35%;
   }
 
   .header__car {
-    width: 80%;
+    width: 99%;
     height: auto;
     max-width: 100%;
-    margin-top: 30%;
+    margin-top: 8%;
   }
 
   /* Features */
@@ -784,6 +807,11 @@ header {
 
   .choose__features {
     gap: 40px;
+    margin-bottom: 7%;
+  }
+
+  .choose__img{
+    margin-top: 12%;
   }
 
   /* Testimonials */
@@ -816,7 +844,9 @@ header {
   }
 
   .header__text {
-    margin-left: 20%;
+    margin-left: 17%;
+    margin-top: 44%;
+    text-align: center;
   }
 
   .header__text__title {
@@ -836,6 +866,8 @@ header {
   .feature {
     width: 100%;
   }
+
+  
 
   /* Download */
 
@@ -866,7 +898,8 @@ header {
   .header__text {
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
+    margin-left: 11%;
+    margin-top: 53%;
   }
 
   /* Testimonials */
@@ -890,6 +923,9 @@ header {
 
 /* XS */
 @media (max-width: 480px) {
+  
+
+  
   /* Header */
 
   .header__text__btns {
@@ -901,6 +937,7 @@ header {
     margin-right: 10%;
     max-width: 400px;
     justify-content: center;
+    margin-top: 60%;
   }
 
   /* Features */
